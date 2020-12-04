@@ -1,4 +1,4 @@
-### Day 23: Toboggan Trajectory ###
+### Day 3: Toboggan Trajectory ###
 
 ## Part 2
 
