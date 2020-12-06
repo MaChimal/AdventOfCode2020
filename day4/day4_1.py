@@ -20,8 +20,8 @@ for i in range(len(passports)):
         passports_.append(data)
         x = i+1
 
-for line in passports_:
-    if "byr" in line and "iyr" in line and "eyr" in line and "hgt" in line and "hcl" in line and "ecl" in line and "pid" in line:
+for _y in passports_:
+    if "byr" in _y and "iyr" in _y and "eyr" in _y and "hgt" in _y and "hcl" in _y and "ecl" in _y and "pid" in _y:
         answer += 1
                 
 print(answer)
