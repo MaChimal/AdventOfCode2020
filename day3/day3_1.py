@@ -4,22 +4,22 @@
 
 answer = 0
 
-map = []
+map_ = []
 
 for _x in open("day3.txt"):
     _x = _x.strip()
-    map.append(_x)
+    map_.append(_x)
 
 row = 0
 col = 0
 
-m = len(map)
+m = len(map_)
 
 while row+1 < m:
     row += 1
     col += 3
 
-    position = map[row][col % len(map[row])]
+    position = map_[row][col % len(map_[row])]
     if position == "#":
         answer += 1
 
