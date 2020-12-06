@@ -1,10 +1,12 @@
 ### Day 5: Binary Boarding ###
 
-## Part 1
+## Part 2
 
 answer = 0
 
 data = []
+
+ids = []
 
 for x in open("day5.txt"):
     x = x.strip()
@@ -38,6 +40,12 @@ for s in data:
 
     seatId = (rLow + 1) * 8 + cHigh
 
-    answer = max(seatId, answer)
+    ids.append(seatId)
+
+sortedSeats = sorted(ids)
+
+for i in range(1, len(ids)-1):
+    if sortedSeats[i+1] != sortedSeats[i] + 1:
+        answer = sortedSeats[i]+1
 
 print(answer)
