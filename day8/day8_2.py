@@ -1,6 +1,6 @@
 ### Day 8: Handheld Halting ###
 
-## Part 1
+## Part 2
 
 instructions = []
 
@@ -24,16 +24,24 @@ def acc(instructions):
 
         ran.add(i)
 
-        op, val = instructions[i]
+        ins, val = instructions[i]
 
-        if op == 'acc':
+        if ins == 'acc':
             accumulator += val
 
-        elif op == 'jmp':
+        elif ins == 'jmp':
             i += val-1
 
         i+=1
 
     return accumulator, repeat
 
-print(acc(instructions)[0])
+exchange = { 'nop':'jmp', 'jmp':'nop' }
+
+enumInstructions = enumerate(instructions)
+
+for i, (ins, val) in enumInstructions:
+    if ins in ['nop', 'jmp']:
+        accum, rep = acc(instructions[:i] + [(exchange[ins], val)] + instructions[i + 1:])
+        if not rep: 
+            print(accum)
