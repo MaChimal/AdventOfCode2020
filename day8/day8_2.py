@@ -36,12 +36,13 @@ def acc(instructions):
 
     return accumulator, repeat
 
-exchange = { 'nop':'jmp', 'jmp':'nop' }
+change = { 'nop':'jmp', 'jmp':'nop' }
 
 enumInstructions = enumerate(instructions)
 
 for i, (ins, val) in enumInstructions:
     if ins in ['nop', 'jmp']:
-        accum, rep = acc(instructions[:i] + [(exchange[ins], val)] + instructions[i + 1:])
+        accum, rep = acc(instructions[:i] + [(change[ins], val)] + instructions[i + 1:])
+
         if not rep: 
             print(accum)
