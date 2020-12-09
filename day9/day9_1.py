@@ -13,18 +13,18 @@ def errorNum():
     allData = len(nums)
 
     for i in range(25, allData):
-        sum = False
+        sum_ = False
 
         for x in nums[i-25:i]:
             for y in nums[i-25:i]:
                 if x + y == nums[i] and x != y:
-                    sum = True
+                    sum_ = True
                     break
             
-            if sum:
+            if sum_:
                 break
         
-        if not sum:
+        if not sum_:
             return(nums[i])
     
 answer = errorNum()
